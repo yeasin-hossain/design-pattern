@@ -21,7 +21,7 @@ public class EmailNotificationService
         {
             NotificationEnum.GMAIL => await _gmailNotificationService.SentNotificationAsync(),
             NotificationEnum.BREVO => await _brevoNotificationService.SentNotificationAsync(),
-            _ => "Notification sent failed"
+            _ => "Notification sent failed email"
         };
     }
 }

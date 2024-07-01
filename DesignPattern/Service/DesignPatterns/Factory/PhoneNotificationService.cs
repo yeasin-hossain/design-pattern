@@ -15,13 +15,13 @@ public class PhoneNotificationService
         this._robiNotificationService = new RobiNotificationService();
     }
 
-    public async Task<string> SentSmsNotification(NotificationEnum providerType)
+    public async Task<string> SentPhoneNotification(NotificationEnum providerType)
     {
         return providerType switch
         {
             NotificationEnum.GP => await _gpNotificationService.SentNotificationAsync(),
             NotificationEnum.ROBI => await _robiNotificationService.SentNotificationAsync(),
-            _ => "Notification sent failed"
+            _ => "Notification sent failed from phone"
         };
     }
 }

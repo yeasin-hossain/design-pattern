@@ -1,9 +1,11 @@
 using DesignPattern.Service;
+using DesignPattern.Service.DesignPatterns.AbstractFactory;
 using DesignPattern.Service.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IDesignPatternService, DesignPatternService>();
+builder.Services.AddSingleton<INotification, NotificationService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

@@ -1,3 +1,4 @@
+using DesignPattern.DTO.Request;
 using DesignPattern.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 namespace DesignPattern.Controllers;
@@ -18,5 +19,11 @@ public class DesignPatternController : Controller
    {
       var designPatterns = await _designPatternService.GetDesignPatterns();
       return Ok(designPatterns);
+   }
+
+   [HttpPost("notification")]
+   public async Task<ActionResult<string>> SentNotification(Notification notificationParam)
+   {
+      return await _designPatternService.SentNotification(notificationParam);
    }
 }
