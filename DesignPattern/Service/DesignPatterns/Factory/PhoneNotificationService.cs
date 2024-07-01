@@ -1,18 +1,18 @@
 using DesignPattern.Enum;
 using DesignPattern.Service.Interface;
+using DesignPattern.Service.Notification.Phone;
 
 namespace DesignPattern.Service.DesignPatterns.Factory;
 
-public class SmsNotificationService
+public class PhoneNotificationService
 {
     private readonly INotificationService _gpNotificationService;
     private readonly INotificationService _robiNotificationService;
 
-    public SmsNotificationService(INotificationService gpNotificationService, 
-        INotificationService robiNotificationService)
+    public PhoneNotificationService()
     {
-        this._gpNotificationService = gpNotificationService;
-        this._robiNotificationService = robiNotificationService;
+        this._gpNotificationService = new GpNotificationService();
+        this._robiNotificationService = new RobiNotificationService();
     }
 
     public async Task<string> SentSmsNotification(NotificationEnum providerType)
