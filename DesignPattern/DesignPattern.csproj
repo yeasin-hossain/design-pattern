@@ -13,6 +13,8 @@
 
     <ItemGroup>
       <Folder Include="DTO\" />
+      <Folder Include="Service\DesignPatterns\Singleton\" />
+      <Folder Include="Service\Notification\Email\" />
     </ItemGroup>
 
 </Project>
