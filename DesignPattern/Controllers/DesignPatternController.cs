@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DesignPattern.Controllers;
 
 [ApiController]
-[Route("design-pattern")]
+[Route("design-patterns")]
 public class DesignPatternController : Controller
 {
    private readonly IDesignPatternService _designPatternService;
