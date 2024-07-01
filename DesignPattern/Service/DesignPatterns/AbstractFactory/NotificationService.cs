@@ -18,6 +18,7 @@ public class NotificationService: INotification
     
     public async Task<string> Sent(NotificationMediumEnum mediumType, NotificationEnum providerType)
     {
+        // TODO i know it has bug on provider type, if select phone medium and email provider it will break. 
         return mediumType switch
         {
             NotificationMediumEnum.PHONE => await _phoneNotificationService.SentPhoneNotification(providerType),
